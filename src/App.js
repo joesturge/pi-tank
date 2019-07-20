@@ -3,8 +3,6 @@ import Div100vh from 'react-div-100vh';
 import JoyStick from 'react-joystick';
 import axios from "axios";
 
-import 'rc-slider/assets/index.css';
-
 const joyOptions = {
     mode: 'dynamic',
     catchDistance: 150,
