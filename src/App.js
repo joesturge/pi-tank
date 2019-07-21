@@ -10,14 +10,16 @@ const joyOptions = {
     lockY: true
 }
 
+const controlSocket = new WebSocket("ws://" + window.location.host + "/controlSocket");
+
 const handleInput = (name, value) => {
   switch(name) {
     case "LEFT":
     case "RIGHT":
-      axios.post("/control", {
+      controlSocket.send(JSON.stringify({
         value,
         name
-      });
+      }));
       break;
     default:
   }
